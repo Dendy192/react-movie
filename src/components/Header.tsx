@@ -9,12 +9,13 @@ import {
 } from "@mui/material";
 import { NavbarWrapper } from "../style/Styles.modules";
 import { DrawerContainer } from "./DrawerContainer";
+import { NavLink } from "react-router-dom";
 
 export const menuItems = [
-  { name: "Home" },
-  { name: "Now Playing" },
-  { name: "Popular" },
-  { name: "Tv Shows" },
+  { name: "Home", link: "/" },
+  { name: "Now Playing", link: "" },
+  { name: "Popular", link: "" },
+  { name: "Tv Shows", link: "" },
 ];
 const Header = () => {
   const themes = useTheme();
@@ -30,7 +31,9 @@ const Header = () => {
             <>
               <div className="navLinks">
                 {menuItems.map((nav, index) => (
-                  <Tab className="links" label={nav.name} key={index} />
+                  <NavLink to={nav.link} key={index}>
+                    <Tab className="links" label={nav.name} />
+                  </NavLink>
                 ))}
               </div>
               <Button className="logoBtn" variant="contained" color="info">
