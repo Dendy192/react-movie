@@ -1,18 +1,11 @@
-import DisplayItems from "./components/DisplayItems";
 import Header from "./components/Header";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
       <Header />
-      <DisplayItems
-        apiEndpoint="string"
-        itemHeading="hello"
-        tvShowsOn={true}
-        showButton={true}
-        movieOn={true}
-        numberOfMovies={17}
-      />
+      <Home />
     </>
   );
 }
